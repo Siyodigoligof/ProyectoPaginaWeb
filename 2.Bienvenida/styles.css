@@ -1,0 +1,328 @@
+body {
+    font-family: 'Kanit', Arial, sans-serif; 
+    background-color: #221f1f; 
+    color: rgb(255, 253, 253);
+    text-align: center;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+header {
+    display: flex;
+    height: 80px; /* Ajusta según la altura de tu header */
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0a0a0a;
+    width: 100%;
+    padding: 10px 0; /* Espacio superior e inferior */
+}
+
+header .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho del contenedor principal */
+    padding: 0 20px; /* Espacio a los lados */
+}
+
+header .logo {
+    flex: 1;
+}
+
+header .logo img {
+    height: 60px; /* Ajustar según tu logo */
+}
+
+header .search-container.expanded-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    margin-top: 20px;
+}
+
+header .search-container.expanded-search .search-bar {
+    position: relative;
+    width: 80%; 
+    margin: 0 auto; /* Centra la barra de búsqueda */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+header .search-container.expanded-search .search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 20px; 
+    border-radius: 25px;
+    color: white;
+    background-color: #0e0d0d; 
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+
+header .search-container.expanded-search .search-bar input:focus,
+header .search-container.expanded-search .search-bar input:not(:placeholder-shown){
+    border-color: #faf5f5; /* Color de borde al enfocar */
+    background-color: #f7f7f7; /* Color de fondo al enfocar */
+    color: #181717; /* Color del texto al enfocar */
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Sombra azul suave */
+    outline: none; /* Eliminar el borde de enfoque predeterminado */
+}
+
+
+header .search-container.expanded-search .search-bar input:hover {
+    background-color: #f7f7f7; /* Color de fondo al pasar el cursor */
+    color: #181717; /* Color del texto al pasar el cursor */
+    border-color: #e6f7ff; /* Color del borde al pasar el cursor */
+}
+
+
+header .search-bar input::placeholder {
+    color: #bbb; /* Color del texto del marcador de posición */
+    font-style: italic; /* Estilo cursiva */
+}
+
+header .search-bar .search-icon {
+    position: absolute;
+    right: 20px; /* Posición del ícono a la derecha */
+    top: 50%;
+    transform: translateY(-50%); /* Centrar verticalmente */
+    font-size: 1.2rem;
+    color: #bbb;
+    pointer-events: none; /* Hacer el ícono no clicable */
+}
+
+
+
+header .buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+   
+}
+
+header .buttons .btn {
+    margin-left: 10px;
+    font-family: 'Kanit', Arial, sans-serif;
+    background-color: #221f1f;
+    color: rgb(255, 253, 253);
+    border: 1px solid rgb(255, 253, 253);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header .btn:hover {
+    background-color: #4d555c;
+}
+
+header .buttons .filter-button-categories {
+    display: flex;
+    align-items: center;
+    background-color: #363030;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    left: -120px;
+}
+
+header .filter-button-categories:hover {
+    background-color: #575454;
+    color: rgb(247, 243, 243);
+}
+
+header .filter-button-categories.active {
+    background-color: #070707;
+    color: rgba(238, 231, 231, 0.5);
+}
+
+header .filter-button-categories:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(235, 230, 230, 0.5);
+}
+
+header .filter-button-categories i {
+    margin-right: 20px;
+}
+
+header .filter-button-categories i,
+header .filter-button-categories span {
+    pointer-events: none;
+}
+
+.container {
+    margin-top: 50px;
+    position: relative; 
+}
+
+main {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+main.loaded {
+    opacity: 1;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    width: 600px;
+    background-color: rgba(53, 50, 50, 0.8); /* Fondo blanco con transparencia */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: -390px; /* Ajusta este valor según sea necesario para moverlo a la izquierda */
+    margin-top: 5px;
+    padding: 10px 0;
+    border-radius: 5px;
+    display: none;
+    backdrop-filter: blur(10px); /* Aplica un efecto de desenfoque */
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+.btn-round {
+    border-radius: 20px;
+}
+
+.icon-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+
+.icon-text-container h2 {
+    font-size: 3em; /* Tamaño de fuente más grande */
+}
+
+/* Asegurar que los eventos y el botón se alineen correctamente */
+.events .row {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+h1 {
+    font-size: 3em; /* Ajusta el tamaño de fuente del encabezado */
+    margin-bottom: 60px; /* Aumenta el margen inferior para más espacio debajo del encabezado */
+    line-height: 1.5; /* Ajuste del espacio entre líneas del encabezado */
+}
+
+
+
+.container-wide {
+    max-width: 95%; /* Ajusta este valor para cambiar el ancho del contenedor principal */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card-link {
+    text-decoration: none; /* Elimina la decoración del enlace */
+    color: inherit; /* Hereda el color del texto */
+    display: block; /* Asegura que el enlace envuelva todo el contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+.card-link:hover .card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efecto hover */
+    transform: translateY(-5px); /* Efecto hover */
+    cursor: pointer; /* Cambia el cursor a pointer en hover */
+}
+
+.card {
+    width: 100%;
+    height: 500px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #f8f5f5;
+    background-color: #2c2929; 
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.card-img-top {
+    height: 50%; /* Ajusta la altura de la imagen */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%; /* Ajusta la altura del cuerpo de la tarjeta */
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card-title, .card-text, .btn {
+    margin: 5px 0;
+}
+
+/* Estilo base del botón */
+.card .btn-comprar {
+    background-color: #f77d31;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.card .btn-comprar:hover {
+    background-color: #bb5d22;
+}
+
+
+.card .btn-comprar:active {
+    transform: translateY(4px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+.card .btn-comprar.pressed {
+    transform: translateY(4px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+.fa-star-half-alt {
+    font-size: 2.5rem;
+    color: #E5E4E2;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+

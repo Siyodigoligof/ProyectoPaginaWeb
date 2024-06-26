@@ -1,0 +1,344 @@
+/* Definir la animación */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);   /* Movimiento ligeramente menos pronunciado */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar la animación a los elementos */
+.evento-info,
+.evento-descripcion,
+.evento-datos,
+.evento-mapa,
+.eventos-similares,
+.barra-fija,
+.evento-similar-link {
+    opacity: 0;   /* Iniciar con opacidad 0 para que estén ocultos inicialmente */
+    animation: fade-in 1.3s ease-out forwards;   /* Aplicar la animación con duración y transición */
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #221f1f;
+}
+
+.evento-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.evento-info {
+    font-family: "Rubik Mono One", monospace;
+    width: 100%;
+    height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    
+}
+
+
+.evento-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.joinnus.com/user/3585761/TcS696jHKBRURSk.png');
+    background-size: cover;
+    background-position: top;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.evento-info::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 30%, rgba(36, 34, 34, 0.8) 100%);
+    z-index: -1;
+}
+
+.evento-info h2 {
+    margin: 0;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.evento-info .btn-volver {
+    position: absolute;
+    top: 10px; /* Ajusta según sea necesario */
+    left: 30px; /* Ajusta la distancia desde la izquierda */
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Elimina la subrayado */
+}
+
+.evento-info .btn-volver i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    transition: transform 0.3s ease;
+}
+
+.evento-info .btn-volver:hover i {
+    transform: translateX(-5px); /* Mueve la flecha ligeramente hacia la izquierda al pasar el cursor */
+}
+
+.evento-info .btn-volver:hover {
+    text-decoration: none; /* Elimina subrayado en hover */
+    color: #f8f5f5; /* Cambia el color del texto en hover si es necesario */
+}
+
+
+
+
+
+
+.evento-contenido {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    padding: 20px;
+    margin-top: 10px; /* Espacio superior */
+}
+
+.evento-descripcion {
+    flex: 1 1 60%; /* Ocupa el 50% del espacio disponible */
+    
+    color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.evento-adicionales {
+    background-color: #221f1f;
+    flex: 1 1 40%; /* Ocupa el 50% del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.evento-datos {
+    background-color: #221f1f;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 10px; /* Añadir espacio uniforme entre elementos */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-mapa {
+    background-color: #332e2e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Añadir espacio uniforme entre elementos */
+}
+
+.evento-mapa h3 {
+    margin-bottom: 10px;
+}
+
+.evento-mapa .card-body {
+    padding: 0; /* Eliminar el padding */
+}
+
+.evento-mapa .card-body h5,
+.evento-mapa .card-body h6,
+.evento-mapa .card-body p {
+    margin: 5px 0; /* Uniformar los márgenes */
+}
+
+.maps-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+.maps-preview img {
+    width: 100%;
+    height: auto;
+}
+
+.maps-preview span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.eventos-similares {
+   
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+    margin-bottom: 80px; /* Añadir margen inferior para la separación */
+}
+
+.eventos-similares h3 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.evento-similar-link {
+    text-decoration: none; /* Elimina la decoración del enlace */
+    color: inherit; /* Hereda el color del texto */
+    width: 30%;
+    margin: 10px; /* Ajusta el margen para que los elementos no estén demasiado juntos */
+    display: block; /* Asegura que el enlace envuelva todo el contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+.evento-similar-link:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto hover */
+    transform: translateY(-5px); /* Efecto hover */
+    cursor: pointer; /* Cambia el cursor a pointer en hover */
+    text-decoration: none; /* Asegura que no se subrayen los elementos */
+}
+
+.evento-similar {
+    font-family: 'Kanit', Arial, sans-serif; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura que el contenido esté centrado */
+    height: 100%;
+}
+
+.card {
+    width: 100%;
+    height: 100%; /* Asegura que la tarjeta ocupe toda la altura del contenedor */
+    min-height: 400px; /* Ajusta la altura mínima de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #f8f5f5;
+    background-color: #2c2929; 
+    border: none;
+    box-shadow: 0 4px 8px rgba(75, 73, 73, 0.1);
+    transition: all 0.3s ease; /* Transición suave */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.card-img-top {
+    height: 50%; /* Ajusta la altura de la imagen */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ajusta el contenido verticalmente */
+    height: 50%; /* Ajusta la altura del cuerpo de la tarjeta */
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card-title, .card-text, .btn {
+    margin: 5px 0;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between; /* Asegura que el contenido del d-flex esté bien distribuido */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.btn-comprar-similar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-comprar-similar:hover {
+    background-color: #218838;
+}
+
+.container-wide {
+    max-width: 95%; /* Ajusta este valor para cambiar el ancho del contenedor principal */
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.barra-fija {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.barra-fija span {
+    margin-left: 60px; /* Ajusta el margen izquierdo */
+}
+
+.barra-fija .btn-comprar {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 60px; /* Ajusta el margen derecho */
+}
+
+.barra-fija .btn-comprar:hover {
+    background-color: #b20710;
+}

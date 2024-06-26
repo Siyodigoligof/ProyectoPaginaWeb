@@ -1,0 +1,203 @@
+/* CSS Actualizado */
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
+    background-color: #221f1f; 
+    color: white;
+    text-align: center;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.container {
+    margin-top: 60px; /* Aumentar el margen superior para bajar el contenido */
+    position: relative; 
+    animation: fadeIn 0.7s ease-out forwards; /* Ajusta la duración y el timing de la animación */
+    opacity: 0; /* Inicialmente oculto para la animación */
+}
+
+h1 {
+    font-size: 3em; /* Tamaño de fuente más grande */
+}
+
+.institutions-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Ocultar elementos desbordados */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    margin: 0 auto;
+    margin-top: 100px; /* Añadir margen superior para bajar este contenedor */
+}
+
+.institutions {
+    display: flex;
+    transition: transform 0.3s ease; /* Transición suave para el desplazamiento */
+}
+
+.institution {
+    text-align: center;
+    padding: 15px 10px;
+    margin: 0 10px; /* Margen ajustado */
+    flex: 0 0 calc(100% / 4 - 20px); /* Ajusta el tamaño de cada elemento para mostrar solo 5 a la vez */
+    box-sizing: border-box;
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Añade una transición para la opacidad y el movimiento */
+    opacity: 0;
+    transform: translateX(100%); /* Inicialmente fuera de vista */
+    list-style-type: none; /* Eliminar los puntos */
+}
+
+.institution img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+}
+
+.institution a {
+    text-decoration: none;
+    color: rgb(175, 167, 167);
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+    font-size: 1.2em; /* Tamaño de texto más grande */
+}
+
+.institution p {
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.2em; /* Tamaño de texto más grande */
+}
+
+.institution:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen en hover */
+}
+
+.institution a:hover p {
+    color: #f8f7f4; 
+}
+
+.institution.visible {
+    opacity: 1;
+    transform: translateX(0); /* Elementos visibles en su lugar */
+}
+
+.institution.hidden {
+    pointer-events: none;
+    opacity: 0; /* Opcional: para ocultar visualmente los elementos no visibles */
+    transform: translateX(-100%); /* Elementos ocultos fuera de vista */
+}
+
+.nav-button {
+    background-color: #221f1f;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    position: absolute; /* Posiciona los botones absolutamente */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-button#prev-button {
+    left: 0; /* Ajusta la posición del botón de navegación izquierdo */
+}
+
+.nav-button#next-button {
+    right: 0; /* Ajusta la posición del botón de navegación derecho */
+}
+
+.nav-button:hover {
+    background-color: #373d42;
+}
+
+/* ADMIN */
+.add-button {
+    margin-top: 20px;
+}
+
+.config-button {
+    margin-top: 10px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+}
+
+.admin-buttons {
+    margin-top: 0px; /* Añadir margen superior para bajar este contenedor */
+}
+
+.admin-buttons button {
+    background-color: #221f1f;
+    color: rgb(94, 89, 89);
+    border: 1px solid rgb(104, 101, 101);
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-buttons button i {
+    margin-right: 10px;
+}
+
+.admin-buttons button:hover {
+    background-color: #37383a;
+    color: rgb(160, 153, 153);
+}
+
+.add-point-container {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: -100px; /* Reducir el margen superior para elevar este contenedor */
+}
+
+#add-point {
+    background-color: #221f1f;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#add-point i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#add-point:hover {
+    background-color: #373d42;
+}
+
+.add-point-container p {
+    margin: 0;
+    font-weight: bold; 
+    font-size: 0.9em;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
