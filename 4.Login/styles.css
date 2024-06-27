@@ -1,0 +1,143 @@
+body {
+    background-image: url('https://img.freepik.com/fotos-premium/grupo-personas-fotografiando-concierto-musica_1048944-2138026.jpg?w=740');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.login-container {
+    
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form h2 {
+    align-self: flex-start;
+    margin-bottom: 30px;
+    font-size: 40px;
+   
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+    border: 1px solid rgba(107, 105, 105, 0.5);
+    border-radius: 5px;
+    background-color: rgba(38, 53, 87, 0.4);
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Cambiar solo el color del borde */
+}
+
+.input-group input:focus {
+    border-color: rgb(219, 221, 223);
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px; /* Ajusta la posición vertical inicial del label */
+    left: 15px;
+    color: rgba(105, 103, 103, 0.5);
+    font-size: 17px; /* Tamaño de fuente ligeramente más grande */
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input.filled + label {
+    top: 5px; /* Mueve el label hacia arriba cuando el input está enfocado o tiene contenido */
+    font-size: 13px; /* Reduce el tamaño de fuente cuando el input está enfocado o tiene contenido */
+    color: #ada9aa;
+}
+
+.input-group input::placeholder {
+    opacity: 0; /* Oculta el texto del placeholder */
+}
+
+
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.alternative, .remember-me, .new-to-site {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sign-in-code-btn, .forgot-password, .new-to-site a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.sign-in-code-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.remember-me input {
+    margin-right: 10px;
+    vertical-align: middle; /* Ajuste de alineación vertical */
+    position: relative;
+    top: -4px;
+}
+
+.forgot-password:hover, .new-to-site a:hover, .sign-in-code-btn:hover {
+    color: white;
+    text-decoration: underline;
+}
