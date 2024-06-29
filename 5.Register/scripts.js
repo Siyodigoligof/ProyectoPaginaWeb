@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Ajustar la altura del contenedor principal
             input.style.borderColor = '';
-           
+            formContainer.style.height = ''; // Restaurar la altura por defecto
         });
 
         input.addEventListener('blur', function () {
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 formContainer.style.height = formContainer.scrollHeight + 'px';
             } else {
                 validationMessage.style.display = 'none';
-               
+                formContainer.style.height = ''; // Restaurar la altura por defecto si no está vacío
                 input.style.borderColor = '';
             }
         });
     });
 
-    const registerBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
     registerBtn.addEventListener('click', function (event) {
         // Mostrar mensajes de validación para inputs vacíos al intentar registrar
         inputs.forEach(input => {
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -94,3 +93,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+
+
+

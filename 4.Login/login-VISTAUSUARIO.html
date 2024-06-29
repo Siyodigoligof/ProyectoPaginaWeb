@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="fade-in">
+    <a href="../2.Bienvenida/bienvenida-VISTAUSUARIO.html" class="logo-link">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png" alt="Logo de tu página" class="logo">
+    </a>
     <div class="overlay"></div>
     <div class="login-container">
         <form class="login-form">
-            <h2><b>Sign In</b></h2>
+            <h2><b>Inicia sesión</b></h2>
             <div class="input-group">
-                <input type="text" id="username" name="username" placeholder="">
-                <label for="username">Username</label>
+                <input type="email" id="email" placeholder="Email or mobile number">
+                <label for="email">Correo electrónico</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message"><svg
+                    xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16"
+                    role="img" data-icon="CircleXSmall" aria-hidden="true" class="default-ltr-cache-0 e1vkmu651">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z"
+                        fill="currentColor"></path>
+                </svg>Ingresa un correo electrónico válido.
             </div>
-            
+            </div>
             <div class="input-group">
-                <input type="password" id="password" name="password" placeholder="">
-                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <label for="password">Contraseña</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16" role="img" data-icon="CircleXSmall" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z" fill="currentColor"></path>
+                    </svg> La contraseña debe tener entre 8 y 40 caracteres.
+                </div>
             </div>
-            <button type="submit" class="login-btn">Sign In</button>
-            <div class="alternative">
-                <button type="button" class="sign-in-code-btn">Use a Sign-In Code</button>
-                <a href="#" class="forgot-password">Forgot password?</a>
-            </div>
-            <div class="remember-me">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
-            </div>
+            <button type="submit" class="login-btn" id="login-btn"><b>Iniciar Sesión</b></button>
             <div class="new-to-site">
-                <p>New to Netflix? <a href="#">Sign up now.</a></p>
+                <p>Nuevo por aquí? <a href="../5.Register/register-VISTAUSUARIO.html"><b>Regístrate ahora.</b></a></p>
             </div>
         </form>
     </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>

@@ -21,6 +21,7 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
+
 body {
     background-image: url('https://img.freepik.com/fotos-premium/grupo-personas-fotografiando-concierto-musica_1048944-2138026.jpg?w=740');
     background-size: cover;
@@ -34,20 +35,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
-}
-
-.logo-link {
-    position: absolute;
-    top: 20px;
-    left: 180px;
-    z-index: 3; /* Asegura que esté por encima del overlay */
-    text-decoration: none; /* Quitar subrayado del enlace */
-}
-
-.logo {
-    max-width: 100px; /* Ajusta el tamaño máximo según tu diseño */
-    height: auto;
-    cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+    overflow-y: auto;
 }
 
 .overlay {
@@ -58,9 +46,10 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    
 }
 
-.login-container {
+.register-container {
     position: relative;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.7);
@@ -70,21 +59,57 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 440px;
     width: 100%;
-    height: 85%;
+    height: auto;
     flex-direction: column;
-    margin-top: 70px; /* Ajusta este valor según sea necesario */
+    max-height: 110vh
+   
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-form h2 {
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.logo-container img {
+    max-width: 100px;
+    height: auto;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgba(226, 218, 218, 0.7);
+}
+
+.register-form h2 {
     align-self: flex-start;
     margin-bottom: 30px;
     font-size: 32px;
+}
+
+
+
+.separator {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(107, 105, 105, 0.5);
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    color: rgba(107, 105, 105, 0.7);
+}
+
+.separator span {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 10px;
 }
 
 .input-group {
@@ -110,10 +135,10 @@ body {
 }
 
 @supports (-webkit-appearance: none) and (not (-moz-appearance: none)) and (text-size-adjust: none) {
-    .login-container input:-webkit-autofill,
-    .login-container input:-webkit-autofill:hover, 
-    .login-container input:-webkit-autofill:focus, 
-    .login-container input:-webkit-autofill:active {
+    .register-container input:-webkit-autofill,
+    .register-container input:-webkit-autofill:hover, 
+    .register-container input:-webkit-autofill:focus, 
+    .register-container input:-webkit-autofill:active {
         
         -webkit-box-shadow: 0 0 0px 1000px rgba(40, 57, 90, 0.4) inset !important;
         -webkit-text-fill-color: rgb(255, 255, 255) !important;
@@ -155,6 +180,9 @@ body {
     opacity: 0;
 }
 
+
+
+
 .validation-message {
     display: none;
     color: red;
@@ -169,7 +197,10 @@ body {
 }
 
 
-.login-btn {
+
+
+
+.register-btn {
     width: 100%;
     padding: 10px;
     border: none;
@@ -183,26 +214,16 @@ body {
     outline: none;
 }
 
-.login-btn:hover {
+.register-btn:hover {
     background-color: rgba(255, 0, 0, 0.7);
 }
 
-.login-btn:active,
-.login-btn:focus {
+.register-btn:active,
+.register-btn:focus {
     background-color: rgba(255, 0, 0, 0.5);
     transition: background-color 0.3s ease;
     outline: none;
     box-shadow: none;
-}
-
-.alternative, .remember-me, .new-to-site {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sign-in-code-btn, .forgot-password, .new-to-site a {
-    color: #f7f2f2;
-    
 }
 
 .new-to-site p {
@@ -210,11 +231,15 @@ body {
     
 }
 
-.sign-in-code-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
+
+.terms {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(226, 218, 218, 0.5);
 }
 
-
-
+.terms a {
+    color: rgba(226, 218, 218, 0.9);
+    text-decoration: none;
+}

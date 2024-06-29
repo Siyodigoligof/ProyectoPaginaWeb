@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fade-in">
+    <div class="overlay"></div>
+    <div class="register-container">
+        <form class="register-form">
+            <div class="logo-container">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
+                    alt="Logo de la página">
+                <p class="register-text">Regístrate para asistir a tus eventos de preferencia.</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="input-group">
+                <input type="text" id="first-name" placeholder="Nombre completo">
+                <label for="first-name">Nombres completos</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16" role="img" data-icon="CircleXSmall" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z  " fill="currentColor"></path>
+                    </svg> Ingresa sus nombres completos.
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="last-name" placeholder="Nombre de usuario">
+                <label for="last-name">Apellidos completos</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16" role="img" data-icon="CircleXSmall" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z" fill="currentColor"></path>
+                    </svg> Ingresa sus apellidos completos.
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Número de celular o correo electrónico">
+                <label for="email">Correo electrónico</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16"
+                        role="img" data-icon="CircleXSmall" aria-hidden="true" class="default-ltr-cache-0 e1vkmu651">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z"
+                            fill="currentColor"></path>
+                    </svg>Ingresa un correo electrónico válido.
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Contraseña">
+                <label for="password">Contraseña</label>
+                <div data-uia="login-field+validationMessage" id=":r1:" class="validation-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16" viewBox="0 0 16 16" role="img" data-icon="CircleXSmall" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5C11.5899 1.5 14.5 4.41015 14.5 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.46967 5.53033L6.93934 8L4.46967 10.4697L5.53033 11.5303L8 9.06066L10.4697 11.5303L11.5303 10.4697L9.06066 8L11.5303 5.53033L10.4697 4.46967L8 6.93934L5.53033 4.46967L4.46967 5.53033Z" fill="currentColor"></path>
+                    </svg> La contraseña debe tener entre 8 y 40 caracteres.
+                </div>
+            </div>
+            <button type="submit" class="register-btn" id="register-btn"><b>Regístrate</b></button>
+            <div class="new-to-site">
+                <p>¿Tienes una cuenta? <a href="../4.Login/login-VISTAUSUARIO.html"><b>Inicia sesión</b></a></p>
+            </div>
+            <p class="terms">
+                Al registrarte, aceptas nuestras <a href="#">Condiciones</a>, la <a href="#">Política de privacidad</a>
+                y la <a href="#">Política de cookies</a>.
+            </p>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
